@@ -62,3 +62,54 @@ near-zero reach this quarter.
 - https://aeoengine.ai/podcast/ai-content-sites-vanished-from-google-what-happened-and-how-to-adapt
 - https://www.5wpr.com/research/state-of-ai-citations-2026/
 - https://everything-pr.com/ai-platform-citation-source-index-2026/
+
+---
+
+# Atlair specifics (from atlair.cloud/llms.txt, shared by the founder)
+
+Atlair is a GitHub-to-live-URL deploy platform (PaaS) in private preview: framework detection,
+Dockerfile builds, a live view of each deploy stage (Clone → Build → Push → Deploy → Health check),
+and deploy failures shown with a reason code and a next step. Projects get a URL on `atlair.app`.
+Not yet available: custom domains, PR previews, rollback, GitLab, deploying into your own cloud.
+Pricing is not decided.
+
+Competitors: Vercel, Netlify, Railway, Render, Fly.io, Cloudflare, Heroku, DigitalOcean App
+Platform, Coolify (self-hosted).
+
+## Likely reasons reach is near zero
+
+1. **The domain may not be reachable.** Two independent fetchers failed to resolve `atlair.cloud`
+   (ENOTFOUND) and web search does not index it. Verify DNS, Search Console and `site:` results first.
+2. **AI assistants default to incumbents.** Developers now find tools through ChatGPT/Claude;
+   for "deploy my Next.js app" they recommend Vercel, and for full-stack apps Railway or Render.
+3. **The positioning is generic.** "From ready to a live link" is what every PaaS says. The actual
+   differentiator (clear reasons for failed deploys) is understated.
+4. **Content doesn't match the product.** The guides target people running Kubernetes themselves,
+   who are the people least likely to adopt a PaaS.
+5. **Conversion gaps.** No custom domains, no pricing and a private preview make it hard to turn
+   traffic into users.
+
+## Where SEO/GEO fits for Atlair
+
+- **Deploy-error library:** public pages per error/reason code ("Next.js build failed: Module not
+  found", `BUILD_FAILED`), with a cause and a fix. High intent, and it matches the product's promise.
+- **One deploy guide per framework/stack (~30, not thousands):** each backed by a template repo
+  that actually deploys, plus a "Deploy to Atlair" button.
+- **Honest comparison pages:** Atlair vs Vercel / Render / Railway.
+- **Off-site placements:** framework docs that list deploy hosts (Astro, Nuxt, Vite and others),
+  starter template READMEs, awesome-lists, Show HN, r/webdev, r/nextjs, dev.to.
+- **Agent-first distribution:** an MCP server or Claude Code/Cursor integration so AI coding agents
+  can deploy to Atlair themselves.
+
+## Narrow internal agent pipeline (instead of a general SEO product)
+
+1. AI-visibility monitor: weekly, ask ChatGPT/Claude/Perplexity/Gemini ~30 fixed deploy questions
+   and record whether Atlair appears.
+2. Error-library writer: turn real (anonymised) failures into fix pages; a human reviews them.
+3. Template + guide agent: generate a framework template, deploy it on Atlair, and publish only if
+   the health check passes.
+4. Community radar: find Reddit/HN/GitHub threads about failed deploys and draft helpful replies
+   for a human to post.
+
+If this works for Atlair, it can later become a product ("GEO for devtools"), with Atlair as the
+case study.
