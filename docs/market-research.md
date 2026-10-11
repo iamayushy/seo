@@ -113,3 +113,53 @@ Platform, Coolify (self-hosted).
 
 If this works for Atlair, it can later become a product ("GEO for devtools"), with Atlair as the
 case study.
+
+---
+
+# Atlair Post (from post.atlair.cloud/llms.txt, shared by the founder)
+
+Open-source (AGPL-3.0), self-hostable transactional email API and panel that sends through the
+customer's own Amazon SES account. Has: send API with idempotency keys and scheduling; domain
+DKIM/SPF/DMARC setup; a template editor with versions; signed webhooks; bounce/complaint
+suppression; a panel with organizations, roles and an audit log. Not built yet: attachments, batch
+sending, a Node SDK, open/click tracking, contacts and broadcasts. Already has 10 comparison pages,
+6 use-case pages, Markdown copies of every page, and a note that it is not Altair.
+
+## GitHub snapshot (2026-10-11)
+
+| Repo | Stars | Created |
+|---|---|---|
+| atlair-cloud/atlair-mail | 0 | 2026-10-06 (5 days ago); description "a simple email service" |
+| atlair-cloud (org) | — | 2026-09-09 |
+| usesend/useSend (open source, SES, "alternative to Resend") | ~4.7k | 2024-03 |
+| useplunk/plunk (open-source email platform) | ~5.5k | 2024-07 |
+
+**Reframe:** near-zero reach is expected for an org that is one month old with a repo that is five
+days old. This isn't a failed launch yet; there hasn't been a launch.
+
+## Observations
+
+- Two products (a deploy platform and an email API) in two crowded categories, both before
+  pricing, splits a tiny team's distribution effort. Pick one to push for the next 60–90 days.
+- Atlair Post already does GEO hygiene well (llms.txt, .md pages, comparisons, disambiguation).
+  The missing piece is not on-site; it is off-site signals and a launch.
+- Its closest rival (useSend) owns the "open-source SES / Resend alternative" position. A sharper
+  angle is needed: e.g. "your SES, your reputation, a panel your whole team can use" (organizations,
+  roles and an audit log are enterprise-grade features rivals may lack, to be verified), or
+  "transactional only, done properly".
+- Gaps that block common evaluations: Node SDK, attachments (receipts/invoices need them),
+  batch sending.
+- The GitHub description "a simple email service" is the first thing developers and AI crawlers
+  read. It should state the category and the differentiator.
+
+## Launch checklist for an open-source devtool (off-site, where AI answers come from)
+
+1. Strong README: one-line pitch, screenshot/GIF, a 5-minute self-host (docker compose), a
+   one-click deploy (ideally on Atlair itself, which links the two products).
+2. Show HN; r/selfhosted, r/aws, r/node, r/webdev; dev.to/Hashnode write-up of the build.
+3. PRs to awesome-selfhosted, awesome-aws, awesome-email lists; listings on alternativeTo,
+   openalternative.co and similar directories.
+4. GitHub topics (ses, transactional-email, resend-alternative, self-hosted, email-api).
+5. Answer existing "Resend/SendGrid alternative" and "SES dashboard" threads honestly.
+6. Weekly AI-visibility check: "open source Resend alternative", "self-hosted transactional
+   email on SES", "SES dashboard open source".
